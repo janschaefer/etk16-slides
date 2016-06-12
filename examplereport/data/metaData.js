@@ -1,0 +1,1 @@
+jgivenReport.setMetaData({"created":"Nov 25, 2015 9:58:06 AM","title":"JGiven at XP Days Germany 2015 - https://github.com/janschaefer/xpdays2015-example","data":["data0.js"]} );
