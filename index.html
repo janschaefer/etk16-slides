@@ -71,6 +71,12 @@
                     </aside>
 
                   </section>
+
+                  <section>
+                    <a target="_blank" href="http://localhost:9967/petclinic/">
+                      <img src="img/petclinic.png" />
+                    </a>
+                  </section>
                   <section>
                     <h2>Typischer JUnit-Test</h2>
                     <aside class="notes">
@@ -103,7 +109,10 @@ public void shouldInsertPetIntoDatabaseAndGenerateId() {
   </code></pre>
 <small>Beispiel von <a href="https://github.com/spring-projects/spring-petclinic">github.com/spring-projects/spring-petclinic</a></small>
 
-
+<aside class="notes">
+Die 10 goldenen Regeln für schlechte Tests (Tilmann GlaserPeter Fichtner)
+Ein Test wird rot und niemand weiß warum. Selbst bei intensiver Betrachtung ist noch nicht einmal klar, was der Test eigentlich sicherstellen sollte.
+</aside>
 <!--                    <img src="img/tdd.svg"> -->
                   </section>
                   <section>
@@ -129,6 +138,18 @@ public void shouldInsertPetIntoDatabaseAndGenerateId() {
                     </aside>
 
                   </section>
+
+                  <section>
+                    <h2>Beispiel</h2>
+                    <pre><code class="gherkin" data-trim>
+  Scenario: Owners can be found by last name
+
+    Given an owner with last name "Müller"
+     When searching for "Müller"
+     Then exactly the given owner is found
+ </code></pre>
+                  </section>
+
 <!--
                   <section>
                     <h2>TDD</h2>
@@ -236,6 +257,7 @@ public void givenACustomerWhenOrderingABookThenTheBookIsOrderedAndAnEmailIsSent(
           </h2>
         </section>
 
+<!--
         <section>
           <h2>Feature-Dateien (Gherkin)</h2>
 ordering.feature
@@ -272,6 +294,38 @@ public class CustomerStepdefs {
 }
         </code></pre>
         </section>
+-->
+
+        <section>
+          <h2>Feature-Dateien (Gherkin)</h2>
+findowners.feature
+          <pre><code class="gherkin" data-trim>
+Feature: Finding Owners
+
+  Scenario: Owners can be found by last name
+
+    Given an owner with last name "Müller"
+     When searching for "Müller"
+     Then exactly the given owner is found
+        </code></pre>
+        </section>
+        <section>
+          <h2>Schritt-Implementierung (Java)</h2>
+          <pre style="font-size:50%"><code data-trim>
+public class CustomerStepdefs {
+    @Given("an owner with last name (.*)")
+    public void anOwnerWithLastName(String lastName) { ... }
+
+    @When("searching for (.*)")
+    public void searchingFor(String lastName) { ... }
+
+    @Then("exactly the given owner is found")
+    public void exactlyTheGivenOwnerIsFound() { ... }
+}
+        </code></pre>
+        </section>
+
+
 <!--
         <section>
           <blockquote cite="https://en.wikiquote.org/wiki/Jamie_Zawinski">
@@ -357,22 +411,25 @@ Some people, when confronted with a problem, think "I know, I'll use regular exp
         </section>
 
         <section>
+          <h1 style="opacity: 0.8; background: none; border:none; box-shadow:none; -webkit-text-stroke: 2px #555; font-size: 200px; color: white; text-shadow: 5px 5px 15px black">Demo</h1>
+        </section>
+
+        <section>
           <h2>Szenarien in JGiven</h2>
           <pre><code data-trim>
 import org.junit.Test;
 import com.tngtech.jgiven.junit.SimpleScenarioTest;
 
-public class OrderTest extends SimpleScenarioTest&lt;StepDefs&gt; {
+public class FindOwnerTest extends SimpleScenarioTest&lt;StepDefs&gt; {
 
     @Test
-    public void customers_can_order_books() {
+    public void owners_can_be_found_by_last_name() {
 
-        given().a_customer()
-            .and().a_book_on_stock();
+        given().an_owner_with_last_name("Müller");
 
-        when().the_customer_orders_the_book();
+        when().searching_for("Müller");
 
-        then().a_corresponding_order_exists();
+        then().exactly_the_given_owner_is_found();
     }
 }
       </code></pre>
@@ -386,6 +443,7 @@ public class OrderTest extends SimpleScenarioTest&lt;StepDefs&gt; {
           </ul>
         </section>
 -->
+<!--
         <section>
             <h4 class="center">Ok, aber was ist mit Nicht-Entwicklern?</h4>
         </section>
@@ -397,16 +455,16 @@ public class OrderTest extends SimpleScenarioTest&lt;StepDefs&gt; {
           <li class="nowrap">AsciiDoc (Alpha)</li>
         </ul>
         </section>
+
+-->
         <section>
           <h2>Textausgabe</h2>
-          <code><pre>Test Class: com.tngtech.jgiven.example.bookstore.OrderTest
+          <code><pre>
+ Scenario: owners can be found by last name
 
- Scenario: customers can order books
-
-   Given a customer
-     And a book on stock
-    When the customer orders the book
-    Then a corresponding order exists for the customer</pre></code>
+   Given an owner with last name "Müller"
+    When searching for "Müller"
+    Then exactly the given owner is found</pre></code>
 
         </section>
         <section>
@@ -429,7 +487,7 @@ public class OrderTest extends SimpleScenarioTest&lt;StepDefs&gt; {
         <section>
           <h2>Erfahrungen aus der Praxis</h2>
           <ul style="font-size: 32px">
-            <li>Über 2 Jahre Erfahrung aus einem großen Java-Projekt (&gt; 60 Entwickler)</li>
+            <li>Über 2 Jahre Erfahrung aus einem großen Java-Projekt</li>
             <li>Über 3000 Szenarien</li>
             <li>Lesbarkeit und Wiederverwendung von Test-Code stark verbessert</li>
             <li>Wartungskosten von automatisierten Tests <b>veringert</b> (keine harten Zahlen)</li>
@@ -450,12 +508,6 @@ public class OrderTest extends SimpleScenarioTest&lt;StepDefs&gt; {
 
 
 
-      </section>
-
-      <section>
-        <section>
-          <h1 style="opacity: 0.8; background: none; border:none; box-shadow:none; -webkit-text-stroke: 2px #555; font-size: 200px; color: white; text-shadow: 5px 5px 15px black">Demo</h1>
-        </section>
       </section>
 
       <section>
