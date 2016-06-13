@@ -1,6 +1,6 @@
 #!/bin/sh
-cd ../xpdays2015-example
+cd ../etk16-example
 ./gradlew clean test
-cd ../xpdays2015-slides
+cd ../etk16-slides
 rm -rf examplereport/*
-cp -r ../xpdays2015-example/build/reports/jgiven/html/* examplereport
+cp -r ../etk16-example/build/reports/jgiven/html/* examplereport

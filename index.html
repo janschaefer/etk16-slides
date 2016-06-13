@@ -54,7 +54,7 @@
                       <h2 style="margin-top:60px; margin-bottom: 40px; color: #444">Dr. Jan Schäfer</h2>
                       <a href="http://tngtech.com"><img  style="margin-bottom:20px; margin-top:0px; height:40px;" src="img/tng.svg" /></a>
                       <h3>15. Juni 2016</h3>
-                      <img width="400" src="img/ETka-Logo.png" />
+                      <img style="background-color:  #2d5352; padding: 10px;" width="150" src="img/ETka-Logo.png" />
                     <aside class="notes">
                       Müssen sich Entwickler beim Programmieren besser benehmen?<br/>
                       Es wird etwas technischer.
@@ -129,14 +129,14 @@ public void shouldInsertPetIntoDatabaseAndGenerateId() {
                     </aside>
 
                   </section>
-
+<!--
                   <section>
                     <h2>TDD</h2>
                     <h3>Bauen wir die Anwendung richtig?</h3>
                     <p><h3>&nbsp;</h3></p>
                     <h2>BDD</h2>
                     <h3>Bauen wir die richtige Anwendung?</h3>
-
+-->
 <!--
                   <section>
                     <h2>Example</h2>
@@ -317,7 +317,7 @@ Some people, when confronted with a problem, think "I know, I'll use regular exp
         <section data-background="img/wantedposter.jpg" data-background-size="500px">
           &nbsp;
         </section>
-<!--
+
         <section>
           <h2>Stack Overflow?</h2>
         </section>
@@ -333,12 +333,12 @@ Some people, when confronted with a problem, think "I know, I'll use regular exp
             </div>
 
             <div class="fragment">
-              <div style="background-color: red; position:relative; top: -150px; left: 180px;width: 600px;height: 50px; opacity:0.3;" />
+              <img style="background-color: red; padding:10px; position:relative; top: -500px" width="1000px" src="img/stackoverflow-extracted.png" />
+              <div style="border: red solid 5px; position:relative; top: -305px; left: 180px;width: 600px;height: 50px; opacity:0.3;" />
             </div>
           </div>
 
         </section>
--->
       </section>
 
       <section>
@@ -429,7 +429,7 @@ public class OrderTest extends SimpleScenarioTest&lt;StepDefs&gt; {
         <section>
           <h2>Erfahrungen aus der Praxis</h2>
           <ul style="font-size: 32px">
-            <li>2,5 Jahre Erfahrung aus einem großen Java-Projekt</li>
+            <li>Über 2 Jahre Erfahrung aus einem großen Java-Projekt (&gt; 60 Entwickler)</li>
             <li>Über 3000 Szenarien</li>
             <li>Lesbarkeit und Wiederverwendung von Test-Code stark verbessert</li>
             <li>Wartungskosten von automatisierten Tests <b>veringert</b> (keine harten Zahlen)</li>
@@ -556,7 +556,6 @@ public class MyGivenStage extends Stage&lt;MyGivenStage&gt; {
           <ul>
             <li>JGiven-Szenarien werden aus <b>Stage-Klassen</b> zusammengesetzt</li>
             <li>Stage-Klassen ermöglichen <b>Modularität</b> und <b>Wiederverwendung</b></li>
-            <li>Stage-Klassen sind ein Alleinstellungsmerkmal von JGiven, dass es in anderen BDD-Frameworks nicht gibt (Ausnahme: Serenity)</li>
           </ul>
         </section>
 
