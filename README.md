@@ -1,3 +1,2 @@
-# Slides of my presentation at XP Days Germany 2015
-
-http://janschaefer.github.io/xpdays2015-slides
+# Slides of my presentation at Karlsruher Entwicklertag 2016
+https://janschaefer.github.io/etk16-slides
