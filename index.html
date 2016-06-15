@@ -142,11 +142,12 @@ Ein Test wird rot und niemand weiß warum. Selbst bei intensiver Betrachtung ist
                   <section>
                     <h2>Beispiel</h2>
                     <pre><code class="gherkin" data-trim>
-  Scenario: Owners can be found by last name
+  Scenario: Pets can be assigned to pet owners
 
-    Given an owner with last name "Müller"
-     When searching for "Müller"
-     Then exactly the given owner is found
+   Given an existing pet owner
+     And a dog named "bowser"
+    When assigning the pet to the pet owner
+    Then the pet owner owns an additional pet
  </code></pre>
                   </section>
 
