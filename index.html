@@ -50,14 +50,14 @@
 				<section>
 
                   <section  class="title">
-                    <h1>Behavior-Driven Development in Java mit JGiven</h1>
+                    <h1>Verhaltsgetriebene Entwicklung mit JGiven</h1>
                       <h2 style="margin-top:60px; margin-bottom: 40px; color: #444">Dr. Jan Schäfer</h2>
                       <a href="http://tngtech.com"><img  style="margin-bottom:20px; margin-top:0px; height:40px;" src="img/tng.svg" /></a>
-                      <h3>15. Juni 2016</h3>
-                      <img style="background-color:  #2d5352; padding: 10px;" width="150" src="img/ETka-Logo.png" />
+                      <h3>27. Juni 2016</h3>
+                      <h4>Java User Group München</h4>
+<!--                      <img style="background-color:  #2d5352; padding: 10px;" width="150" src="img/ETka-Logo.png" /> -->
                     <aside class="notes">
                       Müssen sich Entwickler beim Programmieren besser benehmen?<br/>
-                      Es wird etwas technischer.
                     </aside>
                   </section>
 
@@ -109,19 +109,23 @@ public void shouldInsertPetIntoDatabaseAndGenerateId() {
   </code></pre>
 <small>Beispiel von <a href="https://github.com/spring-projects/spring-petclinic">github.com/spring-projects/spring-petclinic</a></small>
 
-<aside class="notes">
-Die 10 goldenen Regeln für schlechte Tests (Tilmann GlaserPeter Fichtner)
-Ein Test wird rot und niemand weiß warum. Selbst bei intensiver Betrachtung ist noch nicht einmal klar, was der Test eigentlich sicherstellen sollte.
-</aside>
 <!--                    <img src="img/tdd.svg"> -->
                   </section>
                   <section>
                     <h2>Probleme von JUnit-Tests</h2>
           <ul class="fa-ul bad">
-           <li>Viele technische Details</li>
-           <li>Eigentliche Kern des Tests oft schwer zu erkennen</li>
-           <li>Oft Code-Duplizierung</li>
-           <li><b>Können nur von Entwicklern gelesen werden</b></li>
+           <li class="fragment">Viele technische und irrelevante Details</li>
+           <li class="fragment">Eigentliche Kern des Tests oft schwer zu erkennen
+             <ul class="fragment">
+               <li>Die 10 goldenen Regeln für schlechte Tests (Tilmann Glaser, Peter Fichtner).
+<quote>
+Regel 1: "Ein Test wird rot und niemand weiß warum. Selbst bei intensiver Betrachtung ist noch nicht einmal klar, was der Test eigentlich sicherstellen sollte."
+</quote>
+               </li>
+             </ul>
+           </li>
+           <li class="fragment">Oft Code-Duplizierung</li>
+           <li class="fragment"><b>Können nur von Entwicklern gelesen werden</b></li>
           </ul>
 
                   </section>
@@ -474,7 +478,6 @@ public class FindOwnerTest extends SimpleScenarioTest&lt;StepDefs&gt; {
             <ul>
               <li><a style="font-size: 30px" href="http://jgiven.org/jgiven-report/html5/">jgiven.org/jgiven-report/html5/</a> <a href="file:///home/jan/git/github/jgiven/jgiven-tests/build/reports/jgiven/html5/index.html" style="font-size:20px">(Local)</a></li>
               <li><a style="font-size: 30px" href="http://janschaefer.github.io/xke-jgiven/">janschaefer.github.io/xke-jgiven/</a> <a href="file:///home/jan/git/github/xke-jgiven/index.html" style="font-size:20px">(Local)</a></li>
-              <li><a style="font-size: 30px" href="http://janschaefer.github.io/etk16-example">janschaefer.github.io/etk16-example</a></li>
             </ul>
         </section>
         <section style="text-align:center">
